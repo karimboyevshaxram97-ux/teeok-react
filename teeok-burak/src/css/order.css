@@ -1,0 +1,5 @@
+.orders-page {
+  background: #fdf8f3;
+  min-height: calc(100vh - 80px);
+  padding: 60px 0;
+}
