@@ -1,0 +1,91 @@
+.footer {
+  background: #0d0d14;
+  color: rgba(255,255,255,0.75);
+  padding: 70px 0 0;
+  margin-top: auto;
+}
+
+.footer-inner {
+  flex-direction: row !important;
+  gap: 60px;
+  flex-wrap: wrap;
+  padding-bottom: 52px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-logo {
+  font-size: 26px;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.footer-logo span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #ff6b6b, #feca57);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: 6px;
+}
+
+.footer-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+}
+
+.footer-links {
+  gap: 10px;
+}
+
+.footer-links h4 {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.58);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #ff6b6b;
+}
+
+.footer-contact {
+  gap: 8px;
+}
+
+.footer-contact h4 {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.footer-contact p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-bottom {
+  padding: 22px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.2);
+}

@@ -1,0 +1,528 @@
+.holiday-page {
+  background: #f9f7f4;
+  min-height: calc(100vh - 64px);
+}
+
+/* ─── Hero ─── */
+.holiday-hero {
+  padding: 88px 0 80px;
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+}
+
+/* Slideshow layers — all stacked, only .active is visible */
+.holiday-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 0;
+}
+
+.holiday-hero-bg.active {
+  opacity: 1;
+  animation: holidayKenBurns 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes holidayKenBurns {
+  0%   { transform: scale(1.0) translate(0px, 0px); }
+  33%  { transform: scale(1.07) translate(10px, -6px); }
+  66%  { transform: scale(1.04) translate(-8px, 5px); }
+  100% { transform: scale(1.11) translate(-8px, -8px); }
+}
+
+/* Dark overlay */
+.holiday-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(10, 6, 22, 0.88) 0%,
+    rgba(10, 6, 22, 0.70) 45%,
+    rgba(10, 6, 22, 0.32) 100%
+  );
+  z-index: 1;
+}
+
+/* Dot indicators */
+.holiday-hero-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.holiday-hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s, width 0.3s;
+}
+
+.holiday-hero-dot.active {
+  background: #ff6b6b;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.holiday-hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+}
+
+.holiday-hero-text {
+  flex: 1;
+  max-width: 540px;
+}
+
+/* Right photo card */
+.holiday-hero-photo-wrap {
+  flex-shrink: 0;
+  width: 380px;
+  position: relative;
+}
+
+.holiday-hero-photo-tag {
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 30px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.holiday-hero-photo-tag-top {
+  top: 20px;
+  left: -20px;
+}
+
+.holiday-hero-photo-tag-bot {
+  bottom: 24px;
+  right: -16px;
+}
+
+/* Right photo fade transition */
+.holiday-hero-photo-img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+  box-shadow: 0 24px 72px rgba(0,0,0,0.6), 0 4px 16px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.holiday-hero-photo-img.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── Products Pagination ─── */
+.holiday-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 52px;
+}
+
+.holiday-page-btn {
+  width: 44px !important;
+  height: 44px !important;
+  border: 1.5px solid #e8e4de !important;
+  background: #fff !important;
+  color: #555 !important;
+  transition: all 0.18s !important;
+}
+
+.holiday-page-btn:hover:not(:disabled) {
+  border-color: #ff6b6b !important;
+  color: #ff6b6b !important;
+  transform: scale(1.08) !important;
+}
+
+.holiday-page-btn:disabled {
+  opacity: 0.35 !important;
+  cursor: not-allowed !important;
+}
+
+.holiday-page-num {
+  font-size: 18px;
+  font-weight: 900;
+  color: #1a1a1a;
+  min-width: 32px;
+  text-align: center;
+  letter-spacing: -0.3px;
+}
+
+.holiday-badge-tag {
+  display: inline-block;
+  background: rgba(255,107,107,0.15);
+  border: 1px solid rgba(255,107,107,0.35);
+  color: #ffaaaa;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 24px;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+.holiday-title {
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.15;
+  margin: 0 0 16px;
+  letter-spacing: -1px;
+}
+
+.holiday-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.62);
+  margin: 0 0 34px;
+  line-height: 1.6;
+}
+
+.holiday-hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.holiday-cta-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24) !important;
+  border-radius: 12px !important;
+  padding: 13px 34px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  box-shadow: 0 6px 22px rgba(255,107,107,0.4) !important;
+}
+
+.holiday-cta-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 32px rgba(255,107,107,0.55) !important;
+}
+
+.holiday-inquiry-btn {
+  border: 2px solid rgba(255,255,255,0.3) !important;
+  color: rgba(255,255,255,0.85) !important;
+  border-radius: 12px !important;
+  padding: 12px 30px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+
+.holiday-inquiry-btn:hover {
+  border-color: #feca57 !important;
+  color: #feca57 !important;
+}
+
+.holiday-hero-deco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.holiday-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,107,107,0.25) 0%, rgba(10,10,20,0.6) 100%);
+  border: 2px solid rgba(255,107,107,0.2);
+  box-shadow: 0 0 80px rgba(255,107,107,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 96px;
+  animation: floatEmoji 5s ease-in-out infinite;
+}
+
+@keyframes floatEmoji {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%       { transform: translateY(-14px) rotate(2deg); }
+}
+
+/* ─── Offers ─── */
+.holiday-offers {
+  padding: 44px 0;
+  background: #fff;
+}
+
+.holiday-offer-card {
+  border-radius: 16px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.holiday-offer-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.holiday-offer-badge {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 20px;
+}
+
+/* ─── Categories ─── */
+.holiday-categories {
+  padding: 80px 0;
+  background: #f9f7f4;
+}
+
+.holiday-cat-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 20px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: default;
+}
+
+.holiday-cat-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.11);
+}
+
+.holiday-cat-emoji {
+  font-size: 52px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.holiday-cat-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 9px;
+}
+
+.holiday-cat-desc {
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ─── Gift Products ─── */
+.holiday-products {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.holiday-product-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.holiday-product-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.12);
+}
+
+.holiday-product-img {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-color: #f0ece6;
+  position: relative;
+}
+
+.gift-chip {
+  position: absolute !important;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24) !important;
+  color: #fff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  height: 22px !important;
+  box-shadow: 0 2px 8px rgba(255,107,107,0.4) !important;
+}
+
+.holiday-like-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s, transform 0.2s;
+  padding: 0;
+}
+
+.holiday-like-btn.liked { color: #ff6b6b; }
+.holiday-like-btn:hover { transform: scale(1.15); }
+
+.holiday-product-info { padding: 14px 16px; }
+
+.holiday-product-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.holiday-product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.holiday-product-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ff6b6b;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.holiday-product-views {
+  font-size: 12px;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.holiday-product-stat {
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transition: color 0.15s;
+}
+
+.holiday-like-btn.locked {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.holiday-cart-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  transition: opacity 0.2s, transform 0.15s;
+  padding: 0;
+  box-shadow: 0 3px 10px rgba(255,107,107,0.38);
+}
+
+.holiday-cart-btn:hover { opacity: 0.88; transform: scale(1.12); }
+
+/* ─── CTA Banner ─── */
+.holiday-cta-banner {
+  background: linear-gradient(135deg, #0d0d14 0%, #1a0a2e 100%);
+  padding: 64px 0;
+}
+
+.holiday-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.holiday-cta-title {
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 8px;
+  letter-spacing: -0.5px;
+}
+
+.holiday-cta-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+}
+
+.holiday-cta-contact-btn {
+  border: 2px solid rgba(255,255,255,0.3) !important;
+  color: rgba(255,255,255,0.85) !important;
+  border-radius: 12px !important;
+  padding: 12px 34px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+  text-transform: none !important;
+  transition: border-color 0.2s, color 0.2s !important;
+}
+
+.holiday-cta-contact-btn:hover {
+  border-color: #feca57 !important;
+  color: #feca57 !important;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .holiday-hero-inner     { flex-direction: column; text-align: center; gap: 36px; }
+  .holiday-hero-text      { max-width: 100%; }
+  .holiday-hero-photo-wrap{ width: 100%; max-width: 380px; }
+  .holiday-hero-photo-img { height: 260px; }
+  .holiday-hero-photo-tag-top { left: 10px; }
+  .holiday-hero-photo-tag-bot { right: 10px; }
+  .holiday-title          { font-size: 36px; }
+  .holiday-cta-inner      { flex-direction: column; text-align: center; }
+}

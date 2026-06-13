@@ -1,0 +1,211 @@
+.user-page {
+  background: #f5f3f0;
+  min-height: calc(100vh - 64px);
+  padding-bottom: 80px;
+}
+
+/* ── Banner ── */
+.user-banner {
+  height: 180px;
+  background: linear-gradient(135deg, #0d0d14 0%, #1a0a2e 55%, #2d0a1e 100%);
+  border-radius: 0 0 28px 28px;
+  position: relative;
+  margin-bottom: -60px;
+}
+
+.user-banner::after {
+  content: "";
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 500px; height: 250px;
+  background: radial-gradient(ellipse, rgba(255,107,107,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Main card ── */
+.user-main {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Avatar section ── */
+.user-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 32px 24px;
+  border-bottom: 1px solid #f0ede9;
+}
+
+.user-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.user-avatar-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  margin-top: -50px;
+}
+
+.user-avatar-placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: #fff;
+  font-size: 32px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 20px rgba(255,107,107,0.3);
+  margin-top: -50px;
+}
+
+.user-avatar-edit-btn {
+  position: absolute !important;
+  bottom: 2px;
+  right: 2px;
+  width: 28px !important;
+  height: 28px !important;
+  background: #ff6b6b !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18) !important;
+}
+
+/* ── Info brief ── */
+.user-info-brief {
+  flex: 1;
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.user-nick {
+  font-size: 22px;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+  letter-spacing: -0.4px;
+}
+
+.user-phone {
+  font-size: 14px;
+  color: #999;
+  margin: 0 0 4px;
+}
+
+.user-desc-brief {
+  font-size: 13px;
+  color: #777;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
+/* ── Buttons ── */
+.user-edit-btn {
+  border-radius: 12px !important;
+  border-color: #e8e4de !important;
+  color: #555 !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  padding: 8px 20px !important;
+  font-size: 14px !important;
+  transition: border-color 0.2s, color 0.2s !important;
+}
+
+.user-edit-btn:hover {
+  border-color: #ff6b6b !important;
+  color: #ff6b6b !important;
+}
+
+.user-save-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24) !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  padding: 8px 24px !important;
+  font-size: 14px !important;
+  box-shadow: 0 4px 16px rgba(255,107,107,0.35) !important;
+}
+
+.user-cancel-btn {
+  color: #aaa !important;
+  font-size: 14px !important;
+  text-transform: none !important;
+}
+
+/* ── Form section ── */
+.user-form-section {
+  padding: 28px 32px 36px;
+}
+
+.user-form-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 20px;
+  letter-spacing: -0.2px;
+}
+
+.user-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.user-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.user-field-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* Disabled input look */
+.user-input-disabled .MuiInputBase-root {
+  background: #f9f7f4 !important;
+}
+
+.user-input-disabled .MuiOutlinedInput-notchedOutline {
+  border-color: transparent !important;
+}
+
+/* Active input */
+.user-input-active .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #ff6b6b !important;
+}
+
+/* ── Login prompt ── */
+.user-login-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  gap: 16px;
+  color: #ccc;
+  font-size: 16px;
+}

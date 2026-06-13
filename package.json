@@ -1,0 +1,8 @@
+{
+  "name": "tteok-react",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "yarn --cwd teeok-loyixasi start"
+  }
+}
