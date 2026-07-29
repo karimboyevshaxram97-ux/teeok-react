@@ -69,10 +69,10 @@ class MemberService {
   public async updateMember(input: MemberUpdateInput): Promise<Member> {
     try {
       const formData = new FormData();
-      if (input.memberNick) formData.append("memberNick", input.memberNick);
-      if (input.memberPhone) formData.append("memberPhone", input.memberPhone);
-      if (input.memberAddress) formData.append("memberAddress", input.memberAddress);
-      if (input.memberDesc) formData.append("memberDesc", input.memberDesc);
+      if (input.memberNick !== undefined) formData.append("memberNick", input.memberNick);
+      if (input.memberPhone !== undefined) formData.append("memberPhone", input.memberPhone);
+      if (input.memberAddress !== undefined) formData.append("memberAddress", input.memberAddress);
+      if (input.memberDesc !== undefined) formData.append("memberDesc", input.memberDesc);
       if (input.memberImage instanceof File) formData.append("memberImage", input.memberImage);
 
       const result = await axiosInstance.post<Member>("/member/update", formData, {

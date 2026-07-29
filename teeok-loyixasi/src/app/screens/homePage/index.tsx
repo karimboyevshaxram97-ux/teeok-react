@@ -42,6 +42,8 @@ export default function HomePage({ onAdd }: HomePageProps) {
     member.getTopUsers()
       .then((data: Member[]) => setTopUsers(data))
       .catch((err) => console.log(err));
+    // setPopularProducts/setNewProducts/setTopUsers are dispatch wrappers recreated each render; dispatch itself is stable
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

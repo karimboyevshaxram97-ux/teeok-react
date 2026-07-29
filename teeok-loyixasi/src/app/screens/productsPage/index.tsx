@@ -1,4 +1,3 @@
-import { Container } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import Products from "./Products";
 import ChosenProduct from "./ChosenProduct";

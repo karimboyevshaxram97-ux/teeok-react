@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {
-  Box, Button, Container,
+  Box, Container,
   Card, CardMedia, CardContent, CardActions, IconButton, Typography,
   Skeleton, Pagination,
 } from "@mui/material";
@@ -89,6 +89,7 @@ export default function Products({ onAdd }: ProductsProps) {
   const [isSearching, setIsSearching] = useState(false);
 
   /* Fetch per-section with page */
+  const sectionPageKey = JSON.stringify(sectionPage);
   useEffect(() => {
     const svc = new ProductService();
     ORDERED_CATS.forEach((col) => {
@@ -102,11 +103,8 @@ export default function Products({ onAdd }: ProductsProps) {
         })
         .catch(() => setSectionLoading((prev) => ({ ...prev, [col]: false })));
     });
-  }, [JSON.stringify(sectionPage)]);
-
-  const changeSectionPage = (col: string, delta: number) => {
-    setSectionPage((prev) => ({ ...prev, [col]: Math.max(1, prev[col] + delta) }));
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sectionPageKey]);
 
   const handleSearch = (q = searchText) => {
     const query = q.trim();
@@ -123,6 +121,7 @@ export default function Products({ onAdd }: ProductsProps) {
     if (searchText.trim().length < 2) { if (!searchText) setIsSearching(false); return; }
     const timer = setTimeout(() => handleSearch(searchText), 400);
     return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText]);
 
   const clearSearch = () => { setSearchText(""); setIsSearching(false); setSearchResults([]); };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {
-  Box, Container, Tab, Tabs, Chip, Button, Skeleton, Avatar,
+  Box, Container, Tab, Tabs, Chip, Button, Skeleton,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
@@ -14,7 +14,6 @@ import { serverApi } from "../../../lib/config";
 import OrderService from "../../services/OrderService";
 import { useGlobals } from "../../hooks/useGlobals";
 import { sweetErrorHandling, sweetTopSuccessAlert } from "../../../lib/sweetAlert";
-import { Messages } from "../../../lib/config";
 import "../../../css/order.css";
 
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -68,6 +67,8 @@ export default function OrdersPage() {
       })
       .catch(console.log)
       .finally(() => setLoading(false));
+    // setPausedOrders/setProcessOrders/setFinishedOrders are dispatch wrappers recreated each render; dispatch itself is stable
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authMember, orderBuilder]);
 
   const handleCancelOrder = async (orderId: string) => {

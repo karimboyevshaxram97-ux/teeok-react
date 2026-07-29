@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
   Dialog, DialogContent, Box, Button, Typography,
-  TextField, Divider, CircularProgress, Stepper, Step, StepLabel,
+  TextField, Divider, CircularProgress,
 } from "@mui/material";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import LockIcon from "@mui/icons-material/Lock";

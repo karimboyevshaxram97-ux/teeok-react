@@ -54,14 +54,21 @@ export default function ChosenProduct({ onAdd }: ChosenProductProps) {
   // Fetch product — server typically increments productViews on GET
   useEffect(() => {
     if (!productId) return;
+    let ignore = false;
     new ProductService().getProduct(productId)
       .then((data) => {
+        if (ignore) return;
         setChosenProduct(data);
         // Share fresh view count with card list via GlobalContext
         setFreshView(productId, data.productViews);
       })
       .catch((err) => console.log(err));
-    return () => { setChosenProduct(null); };
+    return () => {
+      ignore = true;
+      setChosenProduct(null);
+    };
+    // setChosenProduct/setFreshView are dispatch/context wrappers recreated each render; only productId should retrigger the fetch
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productId]);
 
   // Load locally stored comments for this product

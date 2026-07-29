@@ -11,12 +11,10 @@ import OtherNavbar from "./components/headers/OtherNavbar";
 import Footer from "./components/footer";
 import AuthenticationModal from "./components/auth";
 import "../css/app.css";
-import { CartItem } from "../lib/types/search";
 import useBasket from "./hooks/useBasket";
 import { useGlobals } from "./hooks/useGlobals";
 import MemberService from "./services/MemberService";
-import { sweetErrorHandling, sweetTopSuccessAlert } from "../lib/sweetAlert";
-import { Messages } from "../lib/config";
+import { sweetTopSuccessAlert } from "../lib/sweetAlert";
 import { T } from "../lib/types/common";
 
 function ScrollToTop() {

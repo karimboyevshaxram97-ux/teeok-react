@@ -51,14 +51,22 @@
   margin-bottom: 8px;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-links .footer-link-btn {
   font-size: 14px;
   color: rgba(255,255,255,0.58);
   text-decoration: none;
   transition: color 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links .footer-link-btn:hover {
   color: #ff6b6b;
 }
 

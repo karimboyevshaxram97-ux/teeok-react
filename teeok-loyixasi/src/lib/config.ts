@@ -16,12 +16,20 @@ export const axiosInstance = axios.create({
   timeout: 10000,
 });
 
+// Registered by ContextProvider so the interceptor can clear React auth state too, not just localStorage
+type UnauthorizedHandler = () => void;
+let unauthorizedHandler: UnauthorizedHandler | null = null;
+export const setUnauthorizedHandler = (handler: UnauthorizedHandler | null) => {
+  unauthorizedHandler = handler;
+};
+
 // On 401 → clear local auth state and go home
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem("memberData");
+      unauthorizedHandler?.();
       if (window.location.pathname !== "/") {
         window.location.href = "/";
       }

@@ -23,7 +23,7 @@ interface OtherNavbarProps {
 
 export default function OtherNavbar(props: OtherNavbarProps) {
   const { cartItems, onAdd, onRemove, onDelete, onDeleteAll,
-    setSignupOpen, setLoginOpen,
+    setLoginOpen,
     anchorEl, handleLogoutClick, handleCloseLogout, handleLogoutRequest } = props;
   const { authMember } = useGlobals();
 

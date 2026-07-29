@@ -1,6 +1,7 @@
 import React, { ReactNode, useState, useEffect } from "react";
 import { Member } from "../../lib/types/member";
 import { GlobalContext } from "../hooks/useGlobals";
+import { setUnauthorizedHandler } from "../../lib/config";
 
 const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [authMember, setAuthMemberState] = useState<Member | null>(() => {
@@ -14,6 +15,12 @@ const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     else localStorage.removeItem("memberData");
     setAuthMemberState(member);
   };
+
+  // Keep React auth state in sync when axios interceptor clears the session on 401
+  useEffect(() => {
+    setUnauthorizedHandler(() => setAuthMemberState(null));
+    return () => setUnauthorizedHandler(null);
+  }, []);
 
   const [orderBuilder, setOrderBuilder] = useState<Date>(new Date());
 

@@ -26,9 +26,9 @@ export default function Footer() {
 
           <Stack className="footer-links">
             <h4>안내</h4>
-            <a href="#">회사 소개</a>
-            <a href="#">배송 안내</a>
-            <a href="#">반품 정책</a>
+            <button type="button" className="footer-link-btn">회사 소개</button>
+            <button type="button" className="footer-link-btn">배송 안내</button>
+            <button type="button" className="footer-link-btn">반품 정책</button>
             <NavLink to="/help">고객센터</NavLink>
           </Stack>
 
