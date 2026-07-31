@@ -63,7 +63,7 @@ export default function PopularProducts({ onAdd }: PopularProductsProps) {
         <Box className="section-title">인기 상품</Box>
         <Box className="section-sub">가장 많이 찾는 베스트 떡</Box>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={{ xs: 1.5, sm: 3 }}>
           {paged.length !== 0
             ? paged.map((product: Product) => {
                 const imgSrc = product.productImages?.[0]
@@ -74,7 +74,7 @@ export default function PopularProducts({ onAdd }: PopularProductsProps) {
                 const commentCount = (product.productComments ?? 0) + (commentDeltas[product._id] ?? 0);
 
                 return (
-                  <Grid size={{ xs: 12, sm: 6, md: 3 }} key={product._id}>
+                  <Grid size={{ xs: 6, sm: 6, md: 3 }} key={product._id}>
                     <Card
                       className="home-card"
                       onClick={() => navigate(`/products/${product._id}`)}
@@ -167,7 +167,7 @@ export default function PopularProducts({ onAdd }: PopularProductsProps) {
               })
             : /* skeleton placeholders while empty */
               skeletons.map((_, i) => (
-                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
+                <Grid size={{ xs: 6, sm: 6, md: 3 }} key={i}>
                   <Card className="home-card">
                     <Skeleton variant="rectangular" height={210} />
                     <CardContent>

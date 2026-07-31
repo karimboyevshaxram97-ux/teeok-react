@@ -103,7 +103,7 @@ export default function UserPage() {
               {authMember.memberDesc && <p className="user-desc-brief">{authMember.memberDesc}</p>}
             </Box>
 
-            <Box sx={{ ml: "auto" }}>
+            <Box className="user-action-box" sx={{ ml: "auto" }}>
               {!editing ? (
                 <Button
                   variant="outlined"

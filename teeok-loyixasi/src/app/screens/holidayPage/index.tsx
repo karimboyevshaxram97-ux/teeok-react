@@ -183,7 +183,7 @@ export default function HolidayPage({ onAdd }: HolidayPageProps) {
         <Container>
           <Box className="section-title">선물 세트 모음</Box>
           <Box className="section-sub">정성 가득한 프리미엄 선물세트를 만나보세요</Box>
-          <Grid container spacing={3} sx={{ mt: 1 }}>
+          <Grid container spacing={{ xs: 1.5, sm: 3 }} sx={{ mt: 1 }}>
             {products.length !== 0 ? (
               products.map((product) => {
                 const imgSrc = product.productImages?.[0]
@@ -195,7 +195,7 @@ export default function HolidayPage({ onAdd }: HolidayPageProps) {
                 const commentCount = (product.productComments ?? 0) + (commentDeltas[product._id] ?? 0);
 
                 return (
-                  <Grid size={{ xs: 12, sm: 6, md: 3 }} key={product._id}>
+                  <Grid size={{ xs: 6, sm: 6, md: 3 }} key={product._id}>
                     <Card className="home-card" onClick={() => navigate(`/products/${product._id}`)}>
                       {/* Image */}
                       <Box className="home-card-img-wrap">

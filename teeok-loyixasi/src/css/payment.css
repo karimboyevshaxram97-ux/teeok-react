@@ -390,6 +390,10 @@
 
 /* ── Mobile ── */
 @media (max-width: 480px) {
+  .pm-header { padding: 18px 16px 14px; }
+  .pm-title { font-size: 16px !important; }
+  .pm-lock { font-size: 10px; padding: 3px 8px; }
+  .pm-summary { padding: 14px 16px; }
   .pm-card-number { font-size: 14px; letter-spacing: 1.5px; }
   .pm-methods { padding: 14px 16px 18px; }
   .pm-detail  { padding: 14px 16px 18px; }

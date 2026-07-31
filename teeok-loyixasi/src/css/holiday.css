@@ -526,3 +526,17 @@
   .holiday-title          { font-size: 36px; }
   .holiday-cta-inner      { flex-direction: column; text-align: center; }
 }
+
+@media (max-width: 640px) {
+  .holiday-hero { padding: 64px 0 56px; min-height: auto; }
+  .holiday-title { font-size: 28px; }
+  .holiday-sub { font-size: 15px; margin-bottom: 24px; }
+  .holiday-hero-photo-img { height: 190px; }
+  .holiday-hero-photo-tag { font-size: 11px; padding: 6px 14px; }
+  .holiday-hero-photo-tag-top { top: 12px; }
+  .holiday-hero-photo-tag-bot { bottom: 14px; }
+  .holiday-offers, .holiday-categories, .holiday-products { padding: 48px 0; }
+  .holiday-offer-card { flex-wrap: wrap; padding: 16px 18px; }
+  .holiday-cta-banner { padding: 44px 0; }
+  .holiday-cta-title { font-size: 22px; }
+}

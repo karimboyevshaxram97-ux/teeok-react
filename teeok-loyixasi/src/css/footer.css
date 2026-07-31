@@ -97,3 +97,10 @@
   font-size: 13px;
   color: rgba(255,255,255,0.2);
 }
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .footer { padding: 44px 0 0; }
+  .footer-inner { gap: 32px; text-align: center; }
+  .footer-brand, .footer-links, .footer-contact { align-items: center !important; width: 100%; }
+}

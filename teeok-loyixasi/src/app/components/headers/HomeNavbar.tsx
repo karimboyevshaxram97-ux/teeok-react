@@ -1,6 +1,9 @@
-import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Paper } from "@mui/material";
+import { useState } from "react";
+import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Paper, IconButton } from "@mui/material";
 import { NavLink, useNavigate } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
 import Basket from "./Basket";
+import MobileNavDrawer from "./MobileNavDrawer";
 import { CartItem } from "../../../lib/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import { serverApi } from "../../../lib/config";
@@ -27,6 +30,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
     anchorEl, handleLogoutClick, handleCloseLogout, handleLogoutRequest } = props;
   const { authMember } = useGlobals();
   const navigate = useNavigate();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <div className="home-navbar">
@@ -36,27 +40,29 @@ export default function HomeNavbar(props: HomeNavbarProps) {
           <NavLink to="/" className="navbar-logo">떡 <span>TTEOK</span></NavLink>
 
           <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-            <Box className="hover-line">
-              <NavLink to="/" end className={({ isActive }) => isActive ? "underline" : ""}>홈</NavLink>
-            </Box>
-            <Box className="hover-line">
-              <NavLink to="/products" className={({ isActive }) => isActive ? "underline" : ""}>상품</NavLink>
-            </Box>
-            <Box className="hover-line">
-              <NavLink to="/holiday" className={({ isActive }) => isActive ? "underline" : ""}>선물세트</NavLink>
-            </Box>
-            {authMember && (
+            <Box className="navbar-links-desktop" sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
               <Box className="hover-line">
-                <NavLink to="/orders" className={({ isActive }) => isActive ? "underline" : ""}>주문</NavLink>
+                <NavLink to="/" end className={({ isActive }) => isActive ? "underline" : ""}>홈</NavLink>
               </Box>
-            )}
-            {authMember && (
               <Box className="hover-line">
-                <NavLink to="/member-page" className={({ isActive }) => isActive ? "underline" : ""}>마이페이지</NavLink>
+                <NavLink to="/products" className={({ isActive }) => isActive ? "underline" : ""}>상품</NavLink>
               </Box>
-            )}
-            <Box className="hover-line">
-              <NavLink to="/help" className={({ isActive }) => isActive ? "underline" : ""}>고객센터</NavLink>
+              <Box className="hover-line">
+                <NavLink to="/holiday" className={({ isActive }) => isActive ? "underline" : ""}>선물세트</NavLink>
+              </Box>
+              {authMember && (
+                <Box className="hover-line">
+                  <NavLink to="/orders" className={({ isActive }) => isActive ? "underline" : ""}>주문</NavLink>
+                </Box>
+              )}
+              {authMember && (
+                <Box className="hover-line">
+                  <NavLink to="/member-page" className={({ isActive }) => isActive ? "underline" : ""}>마이페이지</NavLink>
+                </Box>
+              )}
+              <Box className="hover-line">
+                <NavLink to="/help" className={({ isActive }) => isActive ? "underline" : ""}>고객센터</NavLink>
+              </Box>
             </Box>
 
             <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} onDeleteAll={onDeleteAll} />
@@ -68,6 +74,14 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                 src={authMember?.memberImage ? `${serverApi}/${authMember.memberImage}` : "/icons/default-user.svg"}
                 alt="user" onClick={handleLogoutClick} />
             )}
+
+            <IconButton
+              className="navbar-hamburger-btn"
+              onClick={() => setMobileOpen(true)}
+              aria-label="메뉴 열기"
+            >
+              <MenuIcon />
+            </IconButton>
 
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)}
               onClose={handleCloseLogout} onClick={handleCloseLogout}
@@ -82,6 +96,8 @@ export default function HomeNavbar(props: HomeNavbarProps) {
           </Box>
         </Container>
       </div>
+
+      <MobileNavDrawer open={mobileOpen} onClose={() => setMobileOpen(false)} />
 
       {/* ── Hero section ── */}
       <div className="hero-section">

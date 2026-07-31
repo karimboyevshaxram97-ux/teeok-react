@@ -105,6 +105,13 @@
   box-shadow: 0 8px 24px rgba(255, 107, 107, 0.5) !important;
 }
 
+/* ── Mobile hamburger button ── */
+.navbar-hamburger-btn {
+  display: none !important;
+  color: #fff !important;
+  padding: 8px !important;
+}
+
 /* ── User avatar ── */
 .user-avatar {
   width: 36px;
@@ -341,7 +348,7 @@
    BASKET DROPDOWN
 ══════════════════════════════════════════════ */
 .basket-frame {
-  width: 350px;
+  width: min(350px, 88vw);
   padding: 18px;
 }
 
@@ -484,14 +491,99 @@
   box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4) !important;
 }
 
+/* ══════════════════════════════════════════════
+   MOBILE NAV DRAWER — slides in from the right
+══════════════════════════════════════════════ */
+.mobile-drawer .MuiDrawer-paper {
+  width: 280px;
+  max-width: 82vw;
+  background: #0d0d14;
+  color: #fff;
+}
+
+.mobile-drawer-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 12px 18px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.mobile-drawer-logo {
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.mobile-drawer-logo span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  background: linear-gradient(90deg, #ff6b6b, #feca57);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: 4px;
+}
+
+.mobile-drawer-close {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.mobile-drawer-links {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0;
+  overflow-y: auto;
+}
+
+.mobile-drawer-link {
+  padding: 17px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.2s, color 0.2s;
+}
+
+.mobile-drawer-link:active,
+.mobile-drawer-link.active {
+  color: #ff8f8f !important;
+  background: rgba(255, 107, 107, 0.1);
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .hero-stats-col { display: none; }
   .hero-title { font-size: 36px !important; letter-spacing: -1px; }
   .hero-content-wrap { padding: 130px 0 80px; }
+
+  /* Collapse the inline link row into a hamburger + right-side drawer */
+  .navbar-links-desktop { display: none !important; }
+  .navbar-hamburger-btn { display: inline-flex !important; }
 }
 
 @media (max-width: 600px) {
   .hero-title { font-size: 30px !important; }
+  .hero-desc { font-size: 15px; margin-bottom: 30px; }
+  .hero-btn-main, .hero-btn-ghost { padding: 11px 24px !important; font-size: 14px !important; }
   .hover-line a { font-size: 12px; padding: 6px 8px; }
+  .navbar-logo { font-size: 19px !important; }
+  .login-btn { padding: 7px 14px !important; font-size: 12px !important; }
+  .user-avatar { width: 32px; height: 32px; }
+}
+
+@media (max-width: 380px) {
+  .login-btn { padding: 6px 11px !important; font-size: 11.5px !important; }
+  .navbar-logo { font-size: 17px !important; }
+  .navbar-container { padding: 10px 0 !important; }
 }

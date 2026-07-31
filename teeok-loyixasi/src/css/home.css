@@ -919,3 +919,32 @@
   }
   .map-iframe-wrap { height: 300px; }
 }
+
+/* ══════════════════════════════════════════════
+   MOBILE — tighter sections + smaller, crisper cards
+══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .popular-products,
+  .new-products,
+  .brand-features,
+  .holiday-promo,
+  .map-section { padding: 56px 0; }
+
+  .tvid-section { padding: 64px 0; }
+  .tvid-stats { flex-wrap: wrap; gap: 18px 28px; margin-top: 28px; padding-top: 20px; }
+
+  /* Card image + content shrink so 2-up cards read as compact tiles, not stretched panels */
+  .home-card-media { height: 128px; }
+  .home-card-content { padding: 10px 10px 4px !important; }
+  .home-card-name { font-size: 12.5px !important; }
+  .home-card-size { font-size: 9px; padding: 2px 8px; }
+  .home-card-price { font-size: 14px; margin-top: 6px; }
+  .home-card-stats { gap: 8px; font-size: 10.5px; margin-top: 6px; }
+  .home-card-actions { padding: 6px 8px 10px !important; gap: 4px; }
+  .home-like-btn { width: 28px !important; height: 28px !important; }
+  .home-like-btn svg { font-size: 15px !important; }
+  .home-cart-btn { height: 30px !important; font-size: 11px !important; border-radius: 9px !important; }
+  .home-cat-tag { font-size: 8px; padding: 3px 8px; top: 8px; left: 8px; }
+  .home-like-float { width: 26px; height: 26px; top: 8px; right: 8px; }
+  .home-like-float svg { font-size: 13px !important; }
+}
