@@ -18,6 +18,9 @@ WORKDIR /app
 ARG REACT_APP_API_URL
 ENV REACT_APP_API_URL=$REACT_APP_API_URL
 ENV CI=true
+# Source maps roughly double webpack's peak memory/build time for no
+# runtime benefit in production — matters on small (1-2GB) build hosts.
+ENV GENERATE_SOURCEMAP=false
 
 COPY . .
 
