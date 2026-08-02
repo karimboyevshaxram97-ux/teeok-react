@@ -1,12 +1,21 @@
 import { useState } from "react";
 import { CartItem } from "../../lib/types/search";
+import { useGlobals } from "./useGlobals";
+import { sweetLoginRequiredAlert } from "../../lib/sweetAlert";
 
 const useBasket = () => {
+  const { authMember, setLoginOpen } = useGlobals();
   const cartJson: string | null = localStorage.getItem("cartData");
   const currentCart = cartJson ? JSON.parse(cartJson) : [];
   const [cartItems, setCartItems] = useState<CartItem[]>(currentCart);
 
   const onAdd = (input: CartItem) => {
+    if (!authMember) {
+      sweetLoginRequiredAlert().then((confirmed) => {
+        if (confirmed) setLoginOpen(true);
+      });
+      return;
+    }
     setCartItems((prev) => {
       const exist = prev.find((item: CartItem) => item._id === input._id);
       const cartUpdate = exist
