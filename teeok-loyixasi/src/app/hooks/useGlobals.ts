@@ -16,6 +16,10 @@ interface GlobalInterface {
   isLiked: (id: string) => boolean;
   getLikeCount: (id: string, baseCount: number) => number;
   clearLikes: () => void;
+  loginOpen: boolean;
+  setLoginOpen: (open: boolean) => void;
+  signupOpen: boolean;
+  setSignupOpen: (open: boolean) => void;
 }
 
 export const GlobalContext = createContext<GlobalInterface | undefined>(undefined);

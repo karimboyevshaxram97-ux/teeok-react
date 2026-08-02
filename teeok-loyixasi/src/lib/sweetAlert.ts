@@ -38,6 +38,18 @@ export const sweetTopSmallSuccessAlert = async (
   Toast.fire({ icon: "success", title: msg }).then();
 };
 
+export const sweetLoginRequiredAlert = async (): Promise<boolean> => {
+  const result = await Swal.fire({
+    icon: "warning",
+    title: "로그인이 필요합니다",
+    text: "이 기능을 사용하려면 먼저 로그인해 주세요.",
+    showCancelButton: true,
+    confirmButtonText: "로그인",
+    cancelButtonText: "닫기",
+  });
+  return result.isConfirmed;
+};
+
 export const sweetFailureProvider = (
   msg: string,
   show_button: boolean = false,

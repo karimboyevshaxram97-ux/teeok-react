@@ -2,6 +2,7 @@ import React, { ReactNode, useState, useEffect } from "react";
 import { Member } from "../../lib/types/member";
 import { GlobalContext } from "../hooks/useGlobals";
 import { setUnauthorizedHandler } from "../../lib/config";
+import { sweetLoginRequiredAlert } from "../../lib/sweetAlert";
 
 const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [authMember, setAuthMemberState] = useState<Member | null>(() => {
@@ -23,6 +24,10 @@ const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   }, []);
 
   const [orderBuilder, setOrderBuilder] = useState<Date>(new Date());
+
+  // Auth modals live in context so any feature (e.g. like guard) can open them
+  const [loginOpen, setLoginOpen] = useState<boolean>(false);
+  const [signupOpen, setSignupOpen] = useState<boolean>(false);
 
   // Views: fresh counts fetched from product detail (server increments on GET /product/:id)
   const [freshViews, setFreshViewsMap] = useState<Record<string, number>>({});
@@ -73,7 +78,12 @@ const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const toggleLike = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
     const key = getLikeKey(authMember);
-    if (!key) return;
+    if (!key) {
+      sweetLoginRequiredAlert().then((confirmed) => {
+        if (confirmed) setLoginOpen(true);
+      });
+      return;
+    }
     setLikedIds((prev) => {
       const updated = new Set(prev);
       const wasLiked = updated.has(id);
@@ -106,6 +116,7 @@ const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       freshViews, setFreshView,
       commentDeltas, updateCommentDelta,
       likedIds, toggleLike, isLiked, getLikeCount, clearLikes,
+      loginOpen, setLoginOpen, signupOpen, setSignupOpen,
     }}>
       {children}
     </GlobalContext.Provider>

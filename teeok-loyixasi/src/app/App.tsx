@@ -25,10 +25,11 @@ function ScrollToTop() {
 
 function App() {
   const location = useLocation();
-  const { setAuthMember, authMember, clearLikes } = useGlobals();
+  const {
+    setAuthMember, authMember, clearLikes,
+    signupOpen, setSignupOpen, loginOpen, setLoginOpen,
+  } = useGlobals();
   const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = useBasket();
-  const [signupOpen, setSignupOpen] = useState<boolean>(false);
-  const [loginOpen, setLoginOpen] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
   const handleLogoutClick = (e: T) => setAnchorEl(e.currentTarget);
