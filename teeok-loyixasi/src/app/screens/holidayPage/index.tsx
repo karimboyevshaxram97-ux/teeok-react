@@ -18,12 +18,13 @@ import "../../../css/holiday.css";
 import "../../../css/home.css";
 
 // hero-tteokz.jpg / istockphoto-1419517660...jpg removed: unlicensed iStock
-// preview images (visible watermark). tteok-2/3.jpg are Pexels License
-// (free, no attribution required) — photos by Caio Pezzo and Julio Ribeiro.
+// preview images (visible watermark). tteok-landscape.jpg is Pexels License
+// (free, no attribution required) — photo by Emanuel Pedro. This section
+// renders full-bleed with background-size:cover, so only wide/landscape
+// photos belong here — a portrait source gets cropped to a sliver.
 const HERO_IMAGES = [
   "/images/12.jpg",
-  "/images/tteok-2.jpg",
-  "/images/tteok-3.jpg",
+  "/images/tteok-landscape.jpg",
 ];
 
 const HOLIDAY_CATEGORIES = [
