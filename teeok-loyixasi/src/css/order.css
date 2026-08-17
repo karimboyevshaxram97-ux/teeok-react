@@ -38,27 +38,27 @@
   width: 100%;
 }
 
-.orders-tabs {
-  width: 100% !important;
+.orders-tabs.orders-tabs {
+  width: 100%;
 }
 
-.orders-tabs .MuiTabs-indicator {
-  background-color: #ff6b6b !important;
+.orders-tabs .MuiTabs-indicator.MuiTabs-indicator {
+  background-color: #ff6b6b;
 }
 
-.orders-tabs .MuiTab-root {
+.orders-tabs .MuiTab-root.MuiTab-root {
   flex: 1;
-  text-transform: none !important;
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  color: #888 !important;
-  border-radius: 12px !important;
-  min-height: 48px !important;
-  transition: background 0.2s !important;
+  text-transform: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #888;
+  border-radius: 12px;
+  min-height: 48px;
+  transition: background 0.2s;
 }
 
-.orders-tabs .MuiTab-root.Mui-selected {
-  color: #ff6b6b !important;
+.orders-tabs .MuiTab-root.Mui-selected.Mui-selected {
+  color: #ff6b6b;
   background: rgba(255,107,107,0.06);
 }
 
@@ -138,31 +138,31 @@
 }
 
 /* ── Status chip ── */
-.order-status-chip {
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  border-radius: 8px !important;
-  height: 24px !important;
+.order-status-chip.order-status-chip {
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 8px;
+  height: 24px;
 }
 
-.order-status-chip.status-pause {
-  background: rgba(254,202,87,0.18) !important;
-  color: #b8860b !important;
+.order-status-chip.status-pause.status-pause {
+  background: rgba(254,202,87,0.18);
+  color: #b8860b;
 }
 
-.order-status-chip.status-process {
-  background: rgba(59,130,246,0.12) !important;
-  color: #1d4ed8 !important;
+.order-status-chip.status-process.status-process {
+  background: rgba(59,130,246,0.12);
+  color: #1d4ed8;
 }
 
-.order-status-chip.status-finish {
-  background: rgba(34,197,94,0.12) !important;
-  color: #15803d !important;
+.order-status-chip.status-finish.status-finish {
+  background: rgba(34,197,94,0.12);
+  color: #15803d;
 }
 
-.order-status-chip.status-delete {
-  background: rgba(239,68,68,0.10) !important;
-  color: #dc2626 !important;
+.order-status-chip.status-delete.status-delete {
+  background: rgba(239,68,68,0.10);
+  color: #dc2626;
 }
 
 /* ── Order items ── */
@@ -249,19 +249,19 @@
   color: #1a1a1a;
 }
 
-.order-cancel-btn {
-  border-color: #ff6b6b !important;
-  color: #ff6b6b !important;
-  border-radius: 10px !important;
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  text-transform: none !important;
-  padding: 6px 18px !important;
-  transition: background 0.2s !important;
+.order-cancel-btn.order-cancel-btn {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: none;
+  padding: 6px 18px;
+  transition: background 0.2s;
 }
 
-.order-cancel-btn:hover {
-  background: rgba(255,107,107,0.06) !important;
+.order-cancel-btn.order-cancel-btn:hover {
+  background: rgba(255,107,107,0.06);
 }
 
 /* ── Empty state ── */

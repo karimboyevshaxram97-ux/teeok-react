@@ -5,8 +5,8 @@
   margin-top: auto;
 }
 
-.footer-inner {
-  flex-direction: row !important;
+.footer-inner.footer-inner {
+  flex-direction: row;
   gap: 60px;
   flex-wrap: wrap;
   padding-bottom: 52px;
@@ -102,5 +102,5 @@
 @media (max-width: 640px) {
   .footer { padding: 44px 0 0; }
   .footer-inner { gap: 32px; text-align: center; }
-  .footer-brand, .footer-links, .footer-contact { align-items: center !important; width: 100%; }
+  .footer-brand.footer-brand, .footer-links.footer-links, .footer-contact.footer-contact { align-items: center; width: 100%; }
 }

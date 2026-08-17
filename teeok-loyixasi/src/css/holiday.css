@@ -147,24 +147,24 @@
   margin-top: 52px;
 }
 
-.holiday-page-btn {
-  width: 44px !important;
-  height: 44px !important;
-  border: 1.5px solid #e8e4de !important;
-  background: #fff !important;
-  color: #555 !important;
-  transition: all 0.18s !important;
+.holiday-page-btn.holiday-page-btn {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid #e8e4de;
+  background: #fff;
+  color: #555;
+  transition: all 0.18s;
 }
 
-.holiday-page-btn:hover:not(:disabled) {
-  border-color: #ff6b6b !important;
-  color: #ff6b6b !important;
-  transform: scale(1.08) !important;
+.holiday-page-btn.holiday-page-btn:hover:not(:disabled) {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+  transform: scale(1.08);
 }
 
-.holiday-page-btn:disabled {
-  opacity: 0.35 !important;
-  cursor: not-allowed !important;
+.holiday-page-btn.holiday-page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 
 .holiday-page-num {
@@ -211,34 +211,34 @@
   flex-wrap: wrap;
 }
 
-.holiday-cta-btn {
-  background: linear-gradient(135deg, #ff6b6b, #ee5a24) !important;
-  border-radius: 12px !important;
-  padding: 13px 34px !important;
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  text-transform: none !important;
-  box-shadow: 0 6px 22px rgba(255,107,107,0.4) !important;
+.holiday-cta-btn.holiday-cta-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  border-radius: 12px;
+  padding: 13px 34px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: none;
+  box-shadow: 0 6px 22px rgba(255,107,107,0.4);
 }
 
-.holiday-cta-btn:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 10px 32px rgba(255,107,107,0.55) !important;
+.holiday-cta-btn.holiday-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(255,107,107,0.55);
 }
 
-.holiday-inquiry-btn {
-  border: 2px solid rgba(255,255,255,0.3) !important;
-  color: rgba(255,255,255,0.85) !important;
-  border-radius: 12px !important;
-  padding: 12px 30px !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  text-transform: none !important;
+.holiday-inquiry-btn.holiday-inquiry-btn {
+  border: 2px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: none;
 }
 
-.holiday-inquiry-btn:hover {
-  border-color: #feca57 !important;
-  color: #feca57 !important;
+.holiday-inquiry-btn.holiday-inquiry-btn:hover {
+  border-color: #feca57;
+  color: #feca57;
 }
 
 .holiday-hero-deco {
@@ -369,16 +369,16 @@
   position: relative;
 }
 
-.gift-chip {
-  position: absolute !important;
+.gift-chip.gift-chip {
+  position: absolute;
   top: 10px;
   left: 10px;
-  background: linear-gradient(135deg, #ff6b6b, #ee5a24) !important;
-  color: #fff !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  height: 22px !important;
-  box-shadow: 0 2px 8px rgba(255,107,107,0.4) !important;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  height: 22px;
+  box-shadow: 0 2px 8px rgba(255,107,107,0.4);
 }
 
 .holiday-like-btn {
@@ -498,21 +498,21 @@
   margin: 0;
 }
 
-.holiday-cta-contact-btn {
-  border: 2px solid rgba(255,255,255,0.3) !important;
-  color: rgba(255,255,255,0.85) !important;
-  border-radius: 12px !important;
-  padding: 12px 34px !important;
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  white-space: nowrap !important;
-  text-transform: none !important;
-  transition: border-color 0.2s, color 0.2s !important;
+.holiday-cta-contact-btn.holiday-cta-contact-btn {
+  border: 2px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  padding: 12px 34px;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: none;
+  transition: border-color 0.2s, color 0.2s;
 }
 
-.holiday-cta-contact-btn:hover {
-  border-color: #feca57 !important;
-  color: #feca57 !important;
+.holiday-cta-contact-btn.holiday-cta-contact-btn:hover {
+  border-color: #feca57;
+  color: #feca57;
 }
 
 /* ─── Responsive ─── */

@@ -36,14 +36,14 @@ ul {
   color: #9b7b6a;
 }
 
-.auth-submit-btn {
-  background-color: #c85a2a !important;
-  border-radius: 8px !important;
-  padding: 10px 0 !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
+.auth-submit-btn.auth-submit-btn {
+  background-color: #c85a2a;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 600;
 }
 
-.auth-submit-btn:hover {
-  background-color: #a8461e !important;
+.auth-submit-btn.auth-submit-btn:hover {
+  background-color: #a8461e;
 }
