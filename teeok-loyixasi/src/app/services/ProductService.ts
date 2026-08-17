@@ -38,6 +38,28 @@ class ProductService {
       throw err;
     }
   }
+
+  public async likeProduct(productId: string): Promise<{ productLikes: number; liked: boolean }> {
+    try {
+      const result = await axiosInstance.post(`/product/like/${productId}`);
+      const raw: any = result.data;
+      return { productLikes: raw.productLikes, liked: raw.liked };
+    } catch (err) {
+      console.error("Error, likeProduct:", err);
+      throw err;
+    }
+  }
+
+  public async getMyLikedProductIds(): Promise<string[]> {
+    try {
+      const result = await axiosInstance.get("/product/likes/mine");
+      const raw: any = result.data;
+      return raw?.likedIds ?? [];
+    } catch (err) {
+      console.error("Error, getMyLikedProductIds:", err);
+      throw err;
+    }
+  }
 }
 
 export default ProductService;

@@ -12,7 +12,7 @@ interface GlobalInterface {
   commentDeltas: Record<string, number>;
   updateCommentDelta: (id: string) => void;
   likedIds: Set<string>;
-  toggleLike: (id: string, e: React.MouseEvent) => void;
+  toggleLike: (id: string, e: React.MouseEvent) => Promise<void>;
   isLiked: (id: string) => boolean;
   getLikeCount: (id: string, baseCount: number) => number;
   clearLikes: () => void;
