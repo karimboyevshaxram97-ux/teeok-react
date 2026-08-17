@@ -18,9 +18,12 @@ import "../../../css/holiday.css";
 import "../../../css/home.css";
 
 // hero-tteokz.jpg / istockphoto-1419517660...jpg removed: unlicensed iStock
-// preview images (visible watermark) — swap in real product photos here.
+// preview images (visible watermark). tteok-2/3.jpg are Pexels License
+// (free, no attribution required) — photos by Caio Pezzo and Julio Ribeiro.
 const HERO_IMAGES = [
   "/images/12.jpg",
+  "/images/tteok-2.jpg",
+  "/images/tteok-3.jpg",
 ];
 
 const HOLIDAY_CATEGORIES = [
