@@ -101,8 +101,9 @@ export default function HomeNavbar(props: HomeNavbarProps) {
 
       {/* ── Hero section ── */}
       <div className="hero-section">
-        {/* Animated background */}
-        <div className="hero-bg-img" style={{ backgroundImage: "url('https://media.istockphoto.com/id/2180063904/ko/%EC%82%AC%EC%A7%84/%EC%8C%80-%EB%B0%98%EC%A3%BD-%EA%BB%8D%EC%A7%88%EA%B3%BC-%EA%B3%BC%EC%9D%BC-%EC%86%8D%EC%9D%84-%EC%B1%84%EC%9A%B4-%EB%A7%9B%EC%9E%88%EB%8A%94-%EB%8B%A4%EC%B1%84%EB%A1%9C%EC%9A%B4-%EC%95%84%EC%8B%9C%EC%95%84-%EB%96%A1-%EA%B3%BC%EC%9E%90.jpg?s=1024x1024&w=is&k=20&c=kSg30vh0QYx-m3ZQYp9M3xWquvjvWrMDaYHzSmkCBCc=')" }} />
+        {/* Animated background. Was a direct, unlicensed iStock preview URL
+            (visible watermark) — swap in a real product photo here. */}
+        <div className="hero-bg-img" style={{ backgroundImage: "url('/images/12.jpg')" }} />
         <div className="hero-overlay" />
 
         <Container>

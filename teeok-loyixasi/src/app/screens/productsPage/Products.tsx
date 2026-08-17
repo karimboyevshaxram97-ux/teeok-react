@@ -19,10 +19,10 @@ import { useNavigate } from "react-router-dom";
 import useLikes from "../../hooks/useLikes";
 import { useGlobals } from "../../hooks/useGlobals";
 
+// hero-tteokz.jpg / istockphoto-1419517660...jpg removed: unlicensed iStock
+// preview images (visible watermark) — swap in real product photos here.
 const HERO_IMAGES = [
   "/images/12.jpg",
-  "/images/hero-tteokz.jpg",
-  "/images/istockphoto-1419517660-1024x1024.jpg",
 ];
 
 const PAGE_LIMIT = 4;

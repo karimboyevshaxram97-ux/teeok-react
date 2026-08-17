@@ -17,10 +17,10 @@ import { useGlobals } from "../../hooks/useGlobals";
 import "../../../css/holiday.css";
 import "../../../css/home.css";
 
+// hero-tteokz.jpg / istockphoto-1419517660...jpg removed: unlicensed iStock
+// preview images (visible watermark) — swap in real product photos here.
 const HERO_IMAGES = [
   "/images/12.jpg",
-  "/images/hero-tteokz.jpg",
-  "/images/istockphoto-1419517660-1024x1024.jpg",
 ];
 
 const HOLIDAY_CATEGORIES = [
